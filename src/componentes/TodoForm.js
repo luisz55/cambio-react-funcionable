@@ -9,31 +9,34 @@ class TodoForm extends Component {
             title :'',
             responsible:'',
             Description :'',
-            priority :''
+            priority :'low'
         };
+
+
+    // Enlaces // 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
    
     }
 
     // Enlazando  //
-
+       
     handleSubmit(e) {
-        e.prevenDefault()
+        e.preventDefault();
         this.props.onAddTodo(this.state);
         this.setState({
             title :'',
             responsible:'',
             Description :'',
-            priority :''
+            priority :'low'
 
         });  
         
     }
 
     handleInputChange(e){
-        const {value,name }=e.target;
-        console.log (value,name);
+        const {value, name } = e.target;
+        console.log (value, name);
         this.setState({
             [name]:value
 
